@@ -14,25 +14,30 @@
     <?php
         require_once "blocks/header.html";
 
-        $user = $_COOKIE['user'];
-
         $conn = new mysqli("localhost", "root", "", "nomadica");
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $stmt = $conn->prepare("SELECT user_id FROM users WHERE name = ?");
-        $stmt->bind_param("s", $user);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $user_id = intval($result->fetch_assoc()['user_id']);
+        if (isset($_COOKIE['user'])) {
+            $user = $_COOKIE['user'];
 
-        $stmt = $conn->prepare("SELECT COUNT(*) AS product_count FROM user_products WHERE user_id = ?");
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $products_count = intval($result->fetch_assoc()["product_count"]);
+            $stmt = $conn->prepare("SELECT user_id FROM users WHERE name = ?");
+            $stmt->bind_param("s", $user);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $user_id = intval($result->fetch_assoc()['user_id']);
+
+            $stmt = $conn->prepare("SELECT COUNT(*) AS product_count FROM user_products WHERE user_id = ?");
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $products_count = intval($result->fetch_assoc()["product_count"]);
+        }
+        else {
+            $products_count = 0;
+        }
     ?>
 
     <main>
@@ -46,5 +51,6 @@
     </main>
 
     <script src="js/cart.js"></script>
+    <script src="js/loadUser.js"></script>
 </body>
 </html>

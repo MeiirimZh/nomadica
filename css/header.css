@@ -67,6 +67,12 @@ nav ul li a {
     height: 20px;
 }
 
+.header-tools__user {
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: #fff;
+}
+
 header form input {
     font-family: 'Roboto';
     outline: none;

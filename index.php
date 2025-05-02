@@ -25,5 +25,6 @@
     </main>
 
     <script src="js/products.js"></script>
+    <script src="js/loadUser.js"></script>
 </body>
 </html>

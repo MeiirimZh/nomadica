@@ -28,7 +28,7 @@
             <input type="password" name="repeat_password" placeholder="Введите...">
             <input type="submit" value="Подтвердить">
         </form>
-        <form action="" method="POST" class="sign-in-form">
+        <form action="php/signIn.php" method="POST" class="sign-in-form">
             <h2 class="form-title">Вход</h2>
             <h3>Почта</h3>
             <input type="email" name="email" placeholder="Введите...">
