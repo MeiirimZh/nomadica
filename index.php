@@ -6,7 +6,12 @@
     <title>Nomadica</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
+    <?php
+        require_once "blocks/header.html";
+    ?>
 </body>
 </html>

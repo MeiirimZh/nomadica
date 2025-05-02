@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Neucha';
+    src: url("../fonts/Neucha-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: #2E8B57;
+    height: 80px;
+
+    padding-left: 40px;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Neucha';
+    color: #ffffff;
+    margin-right: 40px;
+}
+
+.header-nav {
+    margin-right: 600px;
+}
+
+.header-nav li {
+    display: inline-block;
+}
+
+.header-nav li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.header-nav li:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: #ffffff;
+}
+
+.header-nav li a {
+    font-family: 'Roboto';
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-tools__cart-icon {
+    width: 10%;
+    height: 10%;
+}
+
+header form input {
+    height: 30px;
+}
