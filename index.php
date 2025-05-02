@@ -17,13 +17,13 @@
     <main>
         <div class="products">
             <?php
-                for ($i = 0; $i < 12; $i++) {
+                for ($i = 0; $i < 16; $i++) {
                     require "blocks/product-card.html";
                 }    
             ?>
         </div>
     </main>
 
-    <script src="js/loadProducts.js"></script>
+    <script src="js/products.js"></script>
 </body>
 </html>

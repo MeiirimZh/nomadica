@@ -13,6 +13,20 @@ CREATE TABLE products (
     category_id INT REFERENCES categories(category_id)
 )
 
+Пользователи:
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL
+)
+
+Корзина:
+CREATE TABLE user_products (
+    user_id INT REFERENCES users(user_id),
+    product_id INT REFERENCES products(product_id)
+)
+
 Вставка товаров:
 INSERT INTO products (product_name, price, image_name, category_id) VALUES
 ('Компас', 890, '00000001.png', 4),

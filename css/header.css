@@ -21,12 +21,16 @@ header {
 header h1 {
     margin: 0;
     font-family: 'Neucha';
-    color: #ffffff;
     margin-right: 40px;
 }
 
+header h1 a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 nav {
-    margin-right: 600px;
+    margin-right: 500px;
 }
 
 nav ul {
@@ -50,12 +54,17 @@ nav ul li a {
 .header-tools {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .header-tools__cart-icon {
-    width: 15%;
-    height: 15%;
+    width: 20px;
+    height: 20px;
+}
+
+.header-tools__user-icon {
+    width: 20px;
+    height: 20px;
 }
 
 header form input {

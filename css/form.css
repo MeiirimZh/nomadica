@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Neucha';
+    src: url("../fonts/Neucha-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+.sign-up-form, .sign-in-form {
+    display: flex;
+    flex-direction: column;
+
+    width: 400px;
+    margin: 0 auto;
+}
+
+.sign-up-form {
+    display: none;
+}
+
+.form-title {
+    font-family: 'Neucha';
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.form-error {
+    font-family: 'Roboto';
+    margin: 0;
+    text-align: center;
+
+    color: #ff4343;
+}
+
+.sign-up-form h3, .sign-in-form h3 {
+    font-family: 'Roboto';
+    color: #000000;
+
+    margin-bottom: 10px;
+}
+
+.sign-up-form input, .sign-in-form input {
+    height: 25px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.sign-up-form input:not([type="submit"]), .sign-in-form input:not([type="submit"]) {
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+input[name="repeat_password"] {
+    margin-bottom: 40px;
+}
+
+input[type="submit"] {
+    font-family: 'Neucha';
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 5px;
+    background: #2E8B57;
+    color: white;
+    transition: .2s;
+}
+
+input[type="submit"]:hover {
+    background: #1b5132;
+    transition: .2s;
+}
+
+.sigin-in-form__submit {
+    margin-bottom: 40px;
+}
+
+.changeFormBtn {
+    font-family: 'Neucha';
+    font-size: 16px;
+    display: block;
+    margin: 30px auto;
+
+    width: 170px;
+    height: 30px;
+    border: none;
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
+.changeFormBtn:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}

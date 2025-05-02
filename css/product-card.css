@@ -32,3 +32,11 @@
 .product-card button:hover {
     background: #1b5132;
 }
+
+.product-card__text-price {
+    margin-bottom: 5px;
+}
+
+.product-card__text-name {
+    font-size: 14px;
+}

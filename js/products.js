@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let products;
+    let page_products;
     let base_img_path = "/nomadica/img/products/";
     
     function shuffleArray(array) {
@@ -8,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
           [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
+    }
+
+    function addToCart(index) {
+        console.log(page_products[index]);
     }
     
     fetch('php/getProducts.php')
@@ -22,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 element.querySelector(".product-card__img").src = base_img_path + page_products[index]['image_name'];
                 element.querySelector(".product-card__text-name").textContent = page_products[index]['product_name'];
                 element.querySelector(".product-card__text-price").textContent = page_products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
+
+                element.querySelector(".product-card__add-to-cart").addEventListener("click", () => addToCart(index));
                 ;
             });
         })
