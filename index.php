@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/product-card.css">
 </head>
 <body>
     <?php
         require_once "blocks/header.html";
     ?>
+    <main>
+        <div class="products">
+            <?php
+                for ($i = 0; $i < 12; $i++) {
+                    require "blocks/product-card.html";
+                }    
+            ?>
+        </div>
+    </main>
+
+    <script src="js/loadProducts.js"></script>
 </body>
 </html>

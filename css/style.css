@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #F5F5F5;
+main {
+    width: 100%;
+}
+
+.products {
+    width: 1118px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin: 0 auto;
 }

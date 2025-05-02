@@ -15,6 +15,7 @@ header {
     height: 80px;
 
     padding-left: 40px;
+    margin-bottom: 50px;
 }
 
 header h1 {
@@ -24,36 +25,42 @@ header h1 {
     margin-right: 40px;
 }
 
-.header-nav {
+nav {
     margin-right: 600px;
 }
 
-.header-nav li {
-    display: inline-block;
+nav ul {
+    display: flex;
+    gap: 20px;
 }
 
-.header-nav li:not(:last-child) {
-    margin-right: 20px;
-}
-
-.header-nav li:hover {
+nav ul li:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     color: #ffffff;
 }
 
-.header-nav li a {
+nav ul li a {
     font-family: 'Roboto';
     font-weight: bold;
     text-decoration: none;
     color: #fff;
 }
 
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .header-tools__cart-icon {
-    width: 10%;
-    height: 10%;
+    width: 15%;
+    height: 15%;
 }
 
 header form input {
+    font-family: 'Roboto';
+    outline: none;
     height: 30px;
+    padding-left: 10px;
 }
