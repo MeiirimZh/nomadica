@@ -40,5 +40,6 @@
     </main>
 
     <script src="js/form.js"></script>
+    <script src="js/loadUser.js"></script>
 </body>
 </html>
