@@ -12,7 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function addToCart(index) {
-        console.log(page_products[index]);
+        fetch('php/addToCart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                product_id: page_products[index]['product_id']
+            })
+        })
+
+        alert("Товар добавлен в корзину!");
     }
     
     fetch('php/getProducts.php')
@@ -26,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
             product_cards.forEach((element, index) => {
                 element.querySelector(".product-card__img").src = base_img_path + page_products[index]['image_name'];
                 element.querySelector(".product-card__text-name").textContent = page_products[index]['product_name'];
-                element.querySelector(".product-card__text-price").textContent = page_products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
+                element.querySelector(".product-card__text-price").textContent = parseInt(page_products[index]['price']).toLocaleString('en-US').replace(/,/g, ' ').toString() + ' ₸';
+                element.querySelector(".product-card__text-price").style.fontWeight = "bold";
 
                 element.querySelector(".product-card__add-to-cart").addEventListener("click", () => addToCart(index));
                 ;
