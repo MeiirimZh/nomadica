@@ -43,7 +43,7 @@
     <main>
         <div class="products">
             <?php
-                for ($i = 0; $i < $products_count - 1; $i++) {
+                for ($i = 0; $i < $products_count; $i++) {
                     require "blocks/product-card.html";
                 }
             ?>
