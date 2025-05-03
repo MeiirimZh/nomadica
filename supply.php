@@ -17,14 +17,19 @@
     <main>
         <div class="products">
             <?php
-                for ($i = 0; $i < 20; $i++) {
+                $conn = new mysqli('localhost', 'root', '', 'nomadica');
+
+                $result = $conn->query("SELECT COUNT(*) AS products_count FROM products WHERE category_id = 3");
+                $products_count = intval($result->fetch_assoc()['products_count']);
+
+                for ($i = 0; $i < $products_count; $i++) {
                     require "blocks/product-card.html";
                 }    
             ?>
         </div>
     </main>
 
-    <script src="js/products.js"></script>
+    <script src="js/categories/supply.js"></script>
     <script src="js/loadUser.js"></script>
 </body>
 </html>

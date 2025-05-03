@@ -29,7 +29,7 @@
         </div>
     </main>
 
-    <script src="js/categories.js"></script>
+    <script src="js/categories/clothing.js"></script>
     <script src="js/loadUser.js"></script>
 </body>
 </html>
