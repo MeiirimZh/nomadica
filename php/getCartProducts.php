@@ -6,9 +6,29 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT product_id, product_name, price, image_name, category_id FROM products";
-    $result = $conn->query($sql);
     $products = [];
+
+    // Получение user_id
+    $user = $_COOKIE['user'];
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE name = ?");
+    $stmt->bind_param("s", $user);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user_id = intval($result->fetch_assoc()['user_id']);
+
+    $stmt = $conn->prepare('
+        SELECT *
+        FROM products
+        WHERE product_id = ANY(
+        	SELECT product_id
+        	FROM user_products
+        	WHERE user_id = ?
+        )
+    ');
+
+    $stmt->bind_param('i', $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     foreach( $result as $row ) {
         $products[] = $row;
