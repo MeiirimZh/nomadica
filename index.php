@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/product-card.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <?php
@@ -23,6 +24,10 @@
             ?>
         </div>
     </main>
+
+    <?php
+        require_once "blocks/footer.html";
+    ?>
 
     <script src="js/products.js"></script>
     <script src="js/loadUser.js"></script>

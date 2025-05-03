@@ -22,6 +22,8 @@ header h1 {
     margin: 0;
     font-family: 'Neucha';
     margin-right: 40px;
+
+    user-select: none;
 }
 
 header h1 a {
